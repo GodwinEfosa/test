@@ -15,7 +15,38 @@
 <body data-theme="dark">
   
   <!-- Navigation -->
-  
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#" id="logo-container" class="font-display text-xl md:text-2xl font-bold tracking-tight" style="color: var(--fg);">
+            <span id="logo-text">Blue Grid</span>
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="nav-link text-sm font-medium transition-colors hover:text-[var(--color-accent)]" style="color: var(--muted);">Home</a>
+          <a href="#services" class="nav-link text-sm font-medium transition-colors hover:text-[var(--color-accent)]" style="color: var(--muted);">Services</a>
+          <a href="#portfolio" class="nav-link text-sm font-medium transition-colors hover:text-[var(--color-accent)]" style="color: var(--muted);">Portfolio</a>
+          <a href="#booking" class="nav-link text-sm font-medium transition-colors hover:text-[var(--color-accent)]" style="color: var(--muted);">Book a Call</a>
+        </div>
+
+        <!-- Theme Toggle & Mobile Menu -->
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle" class="p-2 rounded-lg transition-all hover:bg-white/10" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon text-lg" style="color: var(--fg);"></i>
+          </button>
+
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg transition-all hover:bg-white/10" aria-label="Open menu">
+            <i class="fa-solid fa-bars text-lg" style="color: var(--fg);"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="mobile-menu fixed inset-0 z-50 md:hidden" style="background: var(--bg);">
