@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo6"></p>
+    <button type="button" onclick="myFunction()">Click me</button>
+    <p id="demo"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+
+    <button type="button" onclick="mFunction()">Click me</button>
+    <p id="demo11"></p>
+
+    <p>Input you age</p>
+    <input type="text" id="age"  value="18">
+    <button type="button" onclick="votingfunvtion()">Click me</button>
+    <p id="demo12"></p>
+
+    <p id="demo13">Good evening</p>
+    <p id="demo14"></p>
+
+    <!-- driving age -->
+     <input type="number" id="drivers-age">
+     <button type="submit" onclick="agesubmission()">Submit</button>
+     <p id="demo15"></p>
+
+     <!-- for loop -->
+      <p id="demo16"></p>
+      <p id="demo17"></p>
+
+      <!-- loop for array -->
+       <p id="demo18"></p>
+       <p id="demo19"></p>
+
+       <button type="button" onclick="newarrayfunction()">Click me for array display</button>
+       <p id="demo20"></p>
+
+       <!-- while loop -->
+       <p id="demo21"></p>
+
+       <!-- do while loop -->
+        <h2>This is for a "do while" loop</h2>
+        <p id="demo22"></p>
+
+        <!-- This is for my complex code-example -->
+         <input type="text" id="input" placeholder="Input-text">
+         <button onclick="complexcode()">Submit</button>
+         <p id="demo23"></p>
+
+
+         <!-- leaning template string -->
+          <p id="demo24"></p>
+          <p id="demo25"></p>
+
+          <!-- This is for the toLowerCase string method -->
+           <button type="button" onclick="turnToLowerCase()">Try it</button>
+           <p id="demo26">HELLO WORLD</p>
+
+           <!-- this if for the include() string -->
+            <p id="demo27"></p>
+
+            <!-- learning replace() -->
+             <p id="demo28">Javascript5 is easier33 than i thought javascript is, javascript84 is the true way of programming</p>
+
+             <!-- learning function -->
+              <p id="demo29"></p>
+              <!-- the return function -->
+               <input type="text" id="demo30">
+               <button type="button" onclick="CheckAge()">Submit</button>
+               <p id="demo31"></p>
+
+               <p id="demo32"></p>
+    <script>
+        // just trying template string again
+        let stringword = `hello world`;
+        document.getElementById('demo32').innerHTML = `${stringword}`;
+
+        let x = 4
+        let y = 8
+        let a = 3
+        document.getElementById('demo').innerHTML = "hello world " + "good day."
+        document.getElementById('demo1').innerHTML = 4 * 4;
+        document.getElementById('demo2').innerHTML = (4+4) * 5;
+        document.getElementById('demo3').innerHTML = x + y * 4;
+        document.getElementById('demo6').innerHTML = x + 7;
+
+        function myFunction(){
+            let EfosaSpeech = `Efosa Speaking: hello Foreximus` 
+            let ForeximusAnswer = `hey am good how are you?`
+            let template = `${EfosaSpeech} <br> ${ForeximusAnswer}`;
+              document.getElementById('demo5').innerHTML = template;      
+        }
+
+        document.getElementById('demo7').innerHTML = (a != 6);
+        document.getElementById('demo8').innerHTML = (a == 6);
+        document.getElementById('demo9').innerHTML = (a > 6);
+        document.getElementById('demo10').innerHTML = (a < 6);
+
+        function mFunction(){
+            let x = 3
+            document.getElementById('demo11').innerHTML = (x < 9 );
+        }
+
+
+        function votingfunvtion(){
+            let age = Number(document.getElementById("age").value);
+            let message;
+            if(isNaN(age)){
+                message = "please insert a number"
+            }else{
+                message = age < 18 ? "not old enough" : "old enough"
+            }
+            document.getElementById("demo12").innerHTML = message;
+        }
+
+        // for hours of the day.
+            if(new Date().getHours() > 18){
+                document.getElementById('demo13').innerHTML = "Good day"
+            }
+
+
+            // for drivers age confirmation
+            
+            function agesubmission(){
+                let field = document.getElementById('drivers-age').value;
+                let Message = document.getElementById('demo15');
+
+                function displayerror(){
+                    if(field < 18){
+                        return "Too young to drive"
+                    }else{
+                        return "old enough to drive"
+                    }
+                    
+                }
+                Message.innerHTML = displayerror();
+            }
+            
+
+            let loop = "";
+            let i = 1;
+            while(i < 10){
+                loop += i;
+                i++;
+            }
+            document.getElementById('demo16').innerHTML = loop;
+
+            let text = 1;
+            for (let i = 0; i < 10; i++){
+                text += i
+            }
+            document.getElementById('demo17').innerHTML = text;
+
+
+            let cars = ["BMW", "TOYOTA", "VOLVO", "BENZ"];
+            let len = cars.length;
+            let whitepaper = "";
+
+            for (let i = 0; i < len; i++){
+                whitepaper += cars[i] + "<br>";
+            }
+            document.getElementById('demo18').innerHTML = whitepaper;
+
+            //the loop tells me that i can control the number of thing i want it to add with insteas of i++ i can say i + 2
+            let p,
+            q = '';
+            for (i = 0; i < 10; i = i + 2) {
+              q += i;
+            }
+            document.getElementById('demo19').innerHTML = q;
+
+            
+
+            function newarrayfunction(){
+                let newloop = ["BMW", "TOYOTA", "VOLVO"];
+                let text = "";
+                
+                for(let i = 0; i < newloop.length; i++){
+                    text += "i love " + newloop[i] + "<br>";
+                }
+                document.getElementById('demo20').innerHTML = text 
+            }
+   
+            let food = ["beans", "rice", "dodo", "yam"];
+            
+            let texts = "";
+            let u = 0
+
+            while(u < food.length){
+                texts += "<br>" + food[u];
+                u++
+            }
+            document.getElementById('demo21').innerHTML = texts;
+
+            let do_loop = 0;
+            let do_text = "";
+            do{
+                do_text += "<br>" + do_loop;
+                do_loop++
+            }while(do_loop < 10)
+
+            document.getElementById('demo22').innerHTML = do_text
+
+            // my complex creation
+            function complexcode(){
+                let input = document.getElementById('input').value;
+                let inPutNospace = input.replace(/\s/g, "")
+                document.getElementById('demo23').innerHTML = inPutNospace.length
+            }
+            
+
+            // leaning a template string
+            let firstName = "Efosa"
+            let lastName = " Godwin"
+            let both = `welcome ${firstName} ${lastName}`
+            let both1 ="Welcome " + firstName + lastName
+
+            document.getElementById('demo24').innerHTML = both
+
+            // complex array
+            let template = `This is a string template`;
+
+            let array = ["Bmw", "Toyota", "Benz", "Lexus"];
+
+            let html = `<h2>${template} </h2> <ul>`
+
+                for ( let x of array){
+                    html += `<li>${x}</li>`
+                }
+                html += `</ul>`
+
+                document.getElementById('demo25').innerHTML = html
+
+
+                // this is for the toLowerCase() string method
+                function turnToLowerCase(){
+                    let text = document.getElementById('demo26').innerHTML;
+                    document.getElementById('demo26').innerHTML = text.toLocaleLowerCase();
+                }
+
+                // this is for the include string
+                let wishlist = ["Shoes", "Hat"];
+                  let newItem = "Shirt";
+
+                  
+                  if (!wishlist.includes(newItem)) {
+                    wishlist.push(newItem);
+
+                    let list = `<ul>`;
+                    for (let x of wishlist){
+                        list += `<li>${x}</li>`;
+                            
+                    }
+                    list += `</ul>`
+                    document.getElementById('demo27').innerHTML = list
+                  } else {
+                      document.getElementById("demo27").innerHTML = `Already in wishlist`;
+                      
+                  }
+
+                //   learning replace 
+                let javascript = document.getElementById('demo28').innerHTML;
+
+                // this is using a regex to replace words globally
+
+                 javascript = javascript.replace(/\d/g, "")
+                 javascript = javascript.replace(/javascript/gi, "C++")  
+                //  javascript = javascript.replace(/\s/g, "") 
+                 document.getElementById('demo28').innerHTML = javascript
+
+
+                // learning function
+                function testingFunction(d, a){
+                    return 8 + 2
+                }
+                let testing = testingFunction(8+2);
+                document.getElementById('demo29').innerHTML = testing
+
+                // learning return function
+                function CheckAge(){
+                    let InputFeild = document.getElementById('demo30').value;
+                    let erriorMessage = document.getElementById('demo31');
+
+                    function CheckUserAge(){
+                
+                        if (InputFeild < 18){
+                            return "Too Young"
+                        }else{
+                            return "old enough"
+                        }
+                    }
+                    erriorMessage.innerHTML = CheckUserAge()
+                    
+                }
+                
+    </script>
+    
+</body>
+</html>

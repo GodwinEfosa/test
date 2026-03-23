@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <span></span>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Student Information Form</h1>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="class">Class:</label>
+                    <input type="text" id="class" name="class" placeholder="Enter your class" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="classId">Class ID:</label>
+                    <input type="text" id="classId" name="classId" placeholder="Enter your class ID" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit</button>
+                <button type="reset" class="btn-reset">Clear</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('studentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                class: document.getElementById('class').value,
+                classId: document.getElementById('classId').value,
+                phone: document.getElementById('phone').value
+            };
+            console.log('Form Submitted:', formData);
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>
